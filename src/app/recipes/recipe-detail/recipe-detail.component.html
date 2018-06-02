@@ -1,0 +1,78 @@
+<div class="row">
+  <div class="col-xs-8">
+    <img
+     [src]="recipe.imagePath" 
+     alt="{{recipe.name}}" 
+     class="img-responsive"
+     style="max-height: 300px">
+ </div>
+  
+
+    <div class="col-xs-4"> 
+      <p></p>
+      <div class="col-xs-6"><b> Total:</b> </div>
+      <div class="col-xs-6"><b>{{recipe.total}}</b></div>
+    </div>
+
+    <div class="col-xs-4"> 
+      <hr>
+      <div class="col-xs-6">Prep:</div><div class="col-xs-6">{{recipe.prep}} </div>
+      <div class="col-xs-6">Cook:</div><div class="col-xs-6">{{recipe.cook}} </div>
+    </div>
+
+    <div class="col-xs-4"> 
+        <hr> 
+        <div class="col-xs-6"><b> Yield:</b> </div><div class="col-xs-6" style="font-weight: bold">{{recipe.output}}</div>
+    </div>
+
+    <div class="col-xs-4"> 
+        <hr> 
+        <div class="col-xs-6"><b> Level:</b> </div><div class="col-xs-6" style="font-weight: bold">{{recipe.level}}</div>
+    </div>
+  
+  </div>
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{recipe.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group" appDropdown>
+        <button 
+          type="button" 
+          class="btn btn-primary dropdown-toggle">
+          Manage Recipe <span class="caret"></span>
+        </button>  
+        <ul class="dropdown-menu">
+          <li><a (click)="onAddToShoppingList()" style="cursor: pointer;">To Shopping list</a></li>
+          <li><a style="cursor: pointer;" (click)="onEditRecipe()">Edit Recipe</a></li>
+          <li><a style="cursor: pointer;">Delete Recipe</a></li>
+         </ul>     
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{recipe.descripton}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <li 
+        class="list-group-item"
+        *ngFor="let ingredient of recipe.ingredients"
+        >
+        {{ingredient.name}} - {{ingredient.amount}}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+      <h3>Directions</h3>
+      {{recipe.directions}}
+    </div>
