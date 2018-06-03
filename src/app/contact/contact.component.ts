@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MapComponent} from '../map/map.component';
+import {FormComponent} from '../form/form.component';
 
 @Component({
   selector: 'app-contact',
