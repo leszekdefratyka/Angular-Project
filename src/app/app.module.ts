@@ -48,7 +48,7 @@ import { FormComponent } from './form/form.component';
     ReactiveFormsModule,  
     
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAQ9f_oT1fxxxzVB0aFH8YTpYhnq6K5TcU'
+      apiKey: 'my api Key'
     })
  
   ],
